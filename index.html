@@ -11,7 +11,6 @@
     <meta property="og:description" content="Soluções tecnológicas sob medida: sistemas personalizados, nuvem, IA e automação.">
     <meta property="og:image" content="icons/og-image.png">
     <meta property="og:url" content="https://www.ticsenterprise.com.br">
-    <meta name="twitter:card" content="summary_large_image">
     <meta name="google-site-verification" content="RDdLGNOso-C_CE5RNDQpUkUKOYIo5fpMKL-p8gGwbuE" />
     <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
     <title>TICS-E | Soluções em Tecnologia</title>
@@ -200,7 +199,7 @@
 
     <section>
         <h2>Entre em Contato</h2>
-        <form action="#" method="POST">
+        <form id="contactForm" method="POST">
             <input type="text" name="nome" placeholder="Seu Nome" required>
             <input type="email" name="email" placeholder="Seu E-mail" required>
             <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
@@ -213,5 +212,20 @@
         <a href="#"><img src="icons/linkedin.png" alt="LinkedIn">LinkedIn</a>
         <a href="#"><img src="icons/github.png" alt="GitHub">GitHub</a>
     </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const email = atob('Z3VpbGhlcm1lLm1hcnRpbnMtdGljc2VAb3V0bG9vay5jb20=');
+            const subject = '4b390c8d-6b9a-459b-b7d7-32925efc41d8';
+            const formData = new FormData(this);
+            const body = `
+                Nome: ${formData.get('nome')}
+                E-mail: ${formData.get('email')}
+                Mensagem: ${formData.get('mensagem')}
+            `;
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    </script>
 </body>
 </html>
