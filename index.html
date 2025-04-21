@@ -28,11 +28,14 @@
             background-color: #f9f9f9;
         }
 
+        header, footer {
+            text-align: center;
+            padding: 20px;
+        }
+
         header {
             background-color: #0078d7;
             color: #fff;
-            padding: 20px;
-            text-align: center;
         }
 
         header h1 {
@@ -42,6 +45,29 @@
 
         header p {
             font-size: 1.2em;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer img {
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 5px;
         }
 
         section {
@@ -89,55 +115,18 @@
             margin-bottom: 10px;
         }
 
-        form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        form input, form textarea, form button {
+        iframe {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            max-width: 800px;
+            height: 100vh;
+            margin: 0 auto;
+            display: block;
         }
 
-        form button {
-            background-color: #0078d7;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-size: 1em;
-        }
-
-        form button:hover {
-            background-color: #005bb5;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-
-        footer a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        footer img {
-            width: 20px;
-            vertical-align: middle;
-            margin-right: 5px;
+        @media (max-width: 768px) {
+            iframe {
+                height: 500px;
+            }
         }
     </style>
     <script type="application/ld+json">
@@ -175,57 +164,49 @@
                 <p>Automatize processos, reduza custos e tenha controle total com sistemas personalizados para a sua empresa.</p>
             </li>
             <li>
-                <img src="icons/cloud.png" alt="Ícone de Migração para a Nuvem">
+                <img src="icons/cloud.png" alt="Ícone representando migração para a nuvem">
                 <h3>2. Migração e Gestão de Aplicações na Nuvem</h3>
                 <p>Leve sua aplicação para a nuvem e ganhe em performance, disponibilidade e segurança.</p>
             </li>
             <li>
-                <img src="icons/ai.png" alt="Inteligência Artificial">
+                <img src="icons/ai.png" alt="Ícone representando inteligência artificial">
                 <h3>3. Consultoria em Inteligência Artificial com Azure AI</h3>
                 <p>Aplique Inteligência Artificial nos seus processos com soluções práticas e acessíveis.</p>
             </li>
             <li>
-                <img src="icons/automation.png" alt="Automação">
+                <img src="icons/automation.png" alt="Ícone representando automação de processos">
                 <h3>4. Automação de Processos com Leitura de Documentos</h3>
                 <p>Transforme PDFs, faturas e planilhas em dados úteis com soluções personalizadas de automação.</p>
             </li>
             <li>
-                <img src="icons/website.png" alt="Sites">
+                <img src="icons/website.png" alt="Ícone representando criação de sites institucionais">
                 <h3>5. Criação de Sites Institucionais e Landing Pages</h3>
                 <p>Ganhe presença online com um site profissional, rápido e otimizado para gerar contatos.</p>
             </li>
         </ul>
-    </section>
-
-    <section>
-        <h2>Entre em Contato</h2>
-        <form id="contactForm" method="POST">
-            <input type="text" name="nome" placeholder="Seu Nome" required>
-            <input type="email" name="email" placeholder="Seu E-mail" required>
-            <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
-            <button type="submit">Solicitar Contato</button>
-        </form>
+        <ul>
+            <li>
+                <iframe 
+                src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAN__4vdf-pUMUtLQTBYMlY5Rlc1NkZYV0FEUlFKOEFINS4u&embed=true&header=false" 
+                frameborder="0" 
+                scrolling="no" 
+                allowfullscreen 
+                webkitallowfullscreen 
+                mozallowfullscreen 
+                msallowfullscreen>
+                </iframe>
+            </li>
+        </ul>
     </section>
 
     <footer>
         <p>&copy; TICS-E 2025</p>
-        <a href="#"><img src="icons/linkedin.png" alt="LinkedIn">LinkedIn</a>
-        <a href="#"><img src="icons/github.png" alt="GitHub">GitHub</a>
+        <a href="https://www.linkedin.com/company/tics-e" target="_blank">
+            <img src="icons/linkedin.png" alt="LinkedIn">LinkedIn
+        </a>
+        <a href="https://github.com/tics-e" target="_blank">
+            <img src="icons/github.png" alt="GitHub">GitHub
+        </a>
     </footer>
-
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            const email = atob('Z3VpbGhlcm1lLm1hcnRpbnMtdGljc2VAb3V0bG9vay5jb20=');
-            const subject = '4b390c8d-6b9a-459b-b7d7-32925efc41d8';
-            const formData = new FormData(this);
-            const body = `
-                Nome: ${formData.get('nome')}
-                E-mail: ${formData.get('email')}
-                Mensagem: ${formData.get('mensagem')}
-            `;
-            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        });
-    </script>
 </body>
 </html>
